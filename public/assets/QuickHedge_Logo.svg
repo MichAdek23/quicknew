@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" fill="currentColor">
+  <!-- Wordmark: QuickHedge in Heavy Bold Geometric Sans -->
+  <text x="0" y="47" font-family="'NeueHaas', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="44" font-weight="900" letter-spacing="-1.5">QuickHedge</text>
+  
+  <!-- Geometric Double Chevron Emblem (inspired by guide mark) -->
+  <g transform="translate(270, 4) scale(0.95)">
+    <!-- Top Chevron -->
+    <path d="M 32 4 L 58 30 L 48 40 L 32 24 L 16 40 L 6 30 Z" />
+    <!-- Bottom Chevron -->
+    <path d="M 32 26 L 58 52 L 48 62 L 32 46 L 16 62 L 6 52 Z" />
+  </g>
+</svg>

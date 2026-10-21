@@ -1,0 +1,1008 @@
+/* ==========================================================================
+   QuickHedge Master Design System & Dedicated Stylesheet
+   Ensures 100% reliable layout, colors, typography & split-screen across all viewports
+   ========================================================================== */
+
+:root {
+  --qh-green-primary: #00873E;
+  --qh-green-hover: #006837;
+  --qh-green-light: #7bf1a8;
+  --qh-green-glow: rgba(0, 135, 62, 0.25);
+  --qh-forest-dark: #001e2b;
+  --qh-ink-primary: #001e2b;
+  --qh-ink-secondary: #334155;
+  --qh-ink-muted: #64748b;
+  --qh-border-light: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   High-Contrast Typography Helpers (overrides body text color on white containers)
+   -------------------------------------------------------------------------- */
+.qh-text-dark {
+  color: #001e2b !important;
+}
+
+.qh-text-secondary {
+  color: #334155 !important;
+}
+
+.qh-text-muted {
+  color: #64748b !important;
+}
+
+.qh-text-faint {
+  color: #94a3b8 !important;
+}
+
+.qh-text-green {
+  color: #00873E !important;
+}
+
+.qh-text-white {
+  color: #ffffff !important;
+}
+
+.qh-font-serif {
+  font-family: 'Besley', Georgia, serif !important;
+}
+
+.qh-font-sans {
+  font-family: 'NeueHaas', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* --------------------------------------------------------------------------
+   Auth Split-Screen Layout (matching MongoDB layout guide)
+   -------------------------------------------------------------------------- */
+.qh-auth-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  background-color: #ffffff;
+  color: #001e2b;
+  font-family: 'NeueHaas', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .qh-auth-page {
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+/* Left Panel: Form Container */
+.qh-auth-form-side {
+  width: 100%;
+  background-color: #ffffff;
+  color: #001e2b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+@media (min-width: 640px) {
+  .qh-auth-form-side {
+    padding: 3rem 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .qh-auth-form-side {
+    width: 44%;
+    max-width: 560px;
+    min-width: 430px;
+    height: 100vh;
+    padding: 3rem 3.5rem 2rem;
+    border-right: 1px solid #eef0f2;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+  }
+}
+
+.qh-auth-form-inner {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.qh-auth-copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  padding-top: 1.5rem;
+}
+
+/* Right Panel: Emerald & Forest Showcase Poster */
+.qh-auth-showcase-side {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .qh-auth-showcase-side {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 85% 20%, rgba(0, 135, 62, 0.45) 0%, transparent 55%),
+                radial-gradient(ellipse at 15% 85%, rgba(0, 104, 55, 0.6) 0%, transparent 60%),
+                #001e2b;
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5rem 4rem;
+    box-sizing: border-box;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Auth Form Elements
+   -------------------------------------------------------------------------- */
+.qh-auth-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1e293b !important;
+  margin-bottom: 0.4rem;
+}
+
+.qh-auth-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.qh-auth-input:focus {
+  outline: none;
+  border-color: #00873E;
+  box-shadow: 0 0 0 3px rgba(0, 135, 62, 0.15);
+}
+
+.qh-auth-input::placeholder {
+  color: #94a3b8;
+}
+
+.qh-auth-social-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.68rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.qh-auth-social-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.qh-auth-primary-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid #00873E;
+  background-color: #00873E;
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 135, 62, 0.28);
+  box-sizing: border-box;
+}
+
+.qh-auth-primary-btn:hover:not(:disabled) {
+  background-color: #006837;
+  border-color: #006837;
+  box-shadow: 0 4px 14px rgba(0, 135, 62, 0.38);
+  transform: translateY(-1px);
+}
+
+.qh-auth-primary-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.qh-auth-primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+/* --------------------------------------------------------------------------
+   Password Input with Inside Eye Toggle & Distinct Divider Spacing
+   -------------------------------------------------------------------------- */
+.qh-password-wrapper {
+  position: relative !important;
+  width: 100%;
+  display: block;
+}
+
+.qh-password-input {
+  width: 100%;
+  padding-right: 2.75rem !important;
+}
+
+.qh-password-toggle {
+  position: absolute !important;
+  right: 0.75rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0.35rem !important;
+  cursor: pointer !important;
+  color: #94a3b8 !important;
+  transition: color 0.15s ease !important;
+  z-index: 5 !important;
+  line-height: 1 !important;
+}
+
+.qh-password-toggle:hover {
+  color: #0f172a !important;
+}
+
+.qh-auth-social-wrap {
+  width: 100%;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.qh-auth-divider {
+  position: relative !important;
+  width: 100%;
+  margin: 2.25rem 0 2rem 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.qh-auth-divider-line {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 50% !important;
+  height: 1px !important;
+  background-color: #e2e8f0 !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.qh-auth-divider-text {
+  position: relative !important;
+  z-index: 2 !important;
+  background-color: #ffffff !important;
+  padding: 0 0.85rem !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #64748b !important;
+}
+
+/* --------------------------------------------------------------------------
+   6-Digit OTP Verification Inputs
+   -------------------------------------------------------------------------- */
+.qh-otp-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 380px;
+  margin: 1.25rem auto;
+}
+
+@media (min-width: 480px) {
+  .qh-otp-container {
+    gap: 0.75rem;
+  }
+}
+
+.qh-otp-box {
+  width: 44px;
+  height: 52px;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #001e2b;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+@media (min-width: 480px) {
+  .qh-otp-box {
+    width: 52px;
+    height: 58px;
+    font-size: 1.65rem;
+  }
+}
+
+.qh-otp-box:focus {
+  border-color: #00873E;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 135, 62, 0.18);
+  transform: translateY(-1px);
+}
+
+.qh-otp-box.filled {
+  border-color: #00873E;
+  background-color: #f7fee7;
+  color: #001e2b;
+}
+
+.qh-otp-box:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   White Section Helpers (Quotes & Team on Homepage)
+   -------------------------------------------------------------------------- */
+.qh-white-section {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.qh-white-section p,
+.qh-white-section span,
+.qh-white-section h1,
+.qh-white-section h2,
+.qh-white-section h3,
+.qh-white-section h4 {
+  color: #000000;
+}
+
+.qh-executive-excerpt {
+  color: #1a1a1a !important;
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem) !important;
+  line-height: 1.85 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+  width: 100% !important;
+}
+
+/* --------------------------------------------------------------------------
+   Team Section Spanning Grid & Full Width Text Layout
+   -------------------------------------------------------------------------- */
+.qh-team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .qh-team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .qh-team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.25rem;
+  }
+}
+
+.qh-team-card-col {
+  width: 100%;
+  grid-column: span 1;
+}
+
+@media (min-width: 1024px) {
+  .qh-team-card-col {
+    grid-column: 1 / 2;
+  }
+}
+
+.qh-team-text-col {
+  width: 100%;
+  grid-column: span 1;
+}
+
+@media (min-width: 640px) {
+  .qh-team-text-col {
+    grid-column: span 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .qh-team-text-col {
+    grid-column: 2 / -1 !important;
+    padding-left: 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Universal Scrollbar Removal (User instruction: "remove all scrollbars")
+   Completely hides scrollbars globally while keeping natural scrolling active
+   -------------------------------------------------------------------------- */
+html,
+body,
+#root,
+*,
+*::before,
+*::after {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE & Edge */
+}
+
+*::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera, Edge */
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+}
+
+*::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  display: none !important;
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ==========================================================================
+   Deliva Mail Layout & Independent Scroll Architecture
+   ========================================================================== */
+
+/* 1. Viewport App Shell */
+.deliva-shell {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #F6F8FC !important;
+  color: #1F1F1F !important;
+  font-family: 'NeueHaas', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+  z-index: 10 !important;
+}
+
+/* 2. Deliva Top Header (64px, seamless #F6F8FC canvas) */
+.deliva-header {
+  height: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+  background-color: #F6F8FC !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+  gap: 16px !important;
+  z-index: 20 !important;
+}
+
+/* Header Search Pill */
+.deliva-search-pill {
+  flex: 1 !important;
+  max-width: 680px !important;
+  height: 48px !important;
+  background-color: #EAF1FB !important;
+  border-radius: 9999px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 18px !important;
+  gap: 12px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid transparent !important;
+  box-sizing: border-box !important;
+}
+
+.deliva-search-pill:hover {
+  background-color: #E2ECF9 !important;
+}
+
+.deliva-search-pill:focus-within {
+  background-color: #FFFFFF !important;
+  border-color: #E0E2EC !important;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.15), 0 1px 2px rgba(60,64,67,0.3) !important;
+}
+
+.deliva-search-input {
+  flex: 1 !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 14px !important;
+  color: #1F1F1F !important;
+  font-family: inherit !important;
+}
+
+.deliva-search-input::placeholder {
+  color: #5E6368 !important;
+}
+
+/* Header Round Icon Buttons */
+.deliva-icon-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  display: inline-flex;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #444746 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.deliva-icon-btn:hover {
+  background-color: rgba(68, 71, 70, 0.08) !important;
+  color: #1F1F1F !important;
+}
+
+/* User Profile Circle Avatar */
+.deliva-avatar {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  background-color: #00873E !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15) !important;
+  flex-shrink: 0 !important;
+  user-select: none !important;
+}
+
+/* User Profile Showcase Avatar (Profile page) */
+.profile-showcase-avatar {
+  width: 96px !important;
+  height: 96px !important;
+  min-width: 96px !important;
+  min-height: 96px !important;
+  max-width: 96px !important;
+  max-height: 96px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.profile-showcase-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 50% !important;
+}
+
+.w-24 { width: 96px !important; }
+.h-24 { height: 96px !important; }
+.w-8 { width: 32px !important; }
+.h-8 { height: 32px !important; }
+
+/* 3. Deliva Body Row (Sidebar + White Card) */
+.deliva-body-row {
+  flex: 1 !important;
+  min-height: 0 !important;
+  height: calc(100vh - 64px) !important;
+  height: calc(100dvh - 64px) !important;
+  display: flex !important;
+  overflow: hidden !important;
+  background-color: #F6F8FC !important;
+  padding-right: 16px !important;
+  padding-bottom: 16px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1023px) {
+  .deliva-body-row {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .deliva-sidebar {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+  }
+
+  .deliva-main-card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+}
+
+/* 4. Deliva Sidebar (Desktop Only) */
+@media (min-width: 1024px) {
+  .deliva-sidebar {
+    width: 256px !important;
+    flex-shrink: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: #F6F8FC !important;
+    padding: 4px 12px 0 12px !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .deliva-sidebar.is-collapsed {
+    width: 76px !important;
+    align-items: center !important;
+    padding: 4px 8px 0 8px !important;
+  }
+}
+
+/* Deliva Compose / Quick Action Button */
+.deliva-compose-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  height: 52px !important;
+  padding: 0 20px !important;
+  border-radius: 16px !important;
+  background-color: #D8EEDF !important;
+  color: #006837 !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05) !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  margin-bottom: 14px !important;
+  width: fit-content !important;
+}
+
+.deliva-compose-btn:hover {
+  background-color: #C2E7D0 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+.deliva-compose-btn.collapsed {
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+  justify-content: center !important;
+  border-radius: 16px !important;
+}
+
+/* Deliva Pill Navigation Links */
+.deliva-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  height: 38px !important;
+  padding: 0 16px !important;
+  border-radius: 9999px !important;
+  color: #444746 !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  cursor: pointer !important;
+  margin-bottom: 2px !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+}
+
+.deliva-nav-item:hover {
+  background-color: #EAEBEF !important;
+  color: #1F1F1F !important;
+}
+
+.deliva-nav-item.is-active {
+  background-color: #D8EEDF !important;
+  color: #006837 !important;
+  font-weight: 700 !important;
+}
+
+.deliva-nav-item.is-active .deliva-nav-icon {
+  color: #00873E !important;
+}
+
+.deliva-nav-item.collapsed {
+  width: 44px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  margin: 0 auto 4px auto !important;
+}
+
+/* Storage / Account Widget at bottom of sidebar */
+.deliva-storage-card {
+  margin-top: auto !important;
+  margin-bottom: 4px !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+}
+
+/* 5. Main Content WHITE CARD Container (Floating independently scrollable card) */
+.deliva-main-card {
+  flex: 1 !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  background-color: #FFFFFF !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.1), 0 1px 2px rgba(60,64,67,0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1023px) {
+  .deliva-main-card {
+    border-radius: 12px !important;
+  }
+}
+
+/* Deliva Card Top Action Bar (Checkbox, refresh, pagination, tabs) */
+.deliva-card-toolbar {
+  height: 48px !important;
+  min-height: 48px !important;
+  flex-shrink: 0 !important;
+  border-bottom: 1px solid #ECEFF1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 16px !important;
+  background-color: #FFFFFF !important;
+  box-sizing: border-box !important;
+}
+
+/* Independent Scroll Container inside the White Card */
+.deliva-scroll-viewport {
+  flex: 1 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 24px 28px !important;
+  box-sizing: border-box !important;
+  background-color: #FFFFFF !important;
+  color: #1F1F1F !important;
+}
+
+@media (max-width: 640px) {
+  .deliva-scroll-viewport {
+    padding: 16px 16px !important;
+  }
+}
+
+/* Ensure all text inside the white card defaults to high-contrast dark text */
+.deliva-main-card,
+.deliva-scroll-viewport {
+  color: #111827 !important;
+}
+
+.deliva-scroll-viewport h1,
+.deliva-scroll-viewport h2,
+.deliva-scroll-viewport h3,
+.deliva-scroll-viewport h4,
+.deliva-scroll-viewport h5,
+.deliva-scroll-viewport h6 {
+  color: #111827 !important;
+}
+
+.deliva-scroll-viewport p,
+.deliva-scroll-viewport span,
+.deliva-scroll-viewport label,
+.deliva-scroll-viewport td,
+.deliva-scroll-viewport th,
+.deliva-scroll-viewport li {
+  color: inherit;
+}
+
+/* Form inputs inside Deliva Viewport */
+.deliva-scroll-viewport input:not([type="checkbox"]):not([type="radio"]),
+.deliva-scroll-viewport textarea,
+.deliva-scroll-viewport select {
+  background-color: #F9FAFB !important;
+  border: 1px solid #E5E7EB !important;
+  color: #111827 !important;
+}
+
+.deliva-scroll-viewport input::placeholder,
+.deliva-scroll-viewport textarea::placeholder {
+  color: #9CA3AF !important;
+  opacity: 1 !important;
+}
+
+.deliva-scroll-viewport select option {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+/* Force dark text for any residual text-white / text-white/* utilities on light elements */
+.deliva-scroll-viewport .text-white:not([class*="bg-[#00873E]"]):not([class*="bg-emerald-6"]):not([class*="bg-emerald-7"]):not([class*="bg-rose-6"]):not([class*="bg-rose-7"]):not([class*="bg-black"]):not(.deliva-avatar):not([class*="bg-gray-9"]):not([class*="bg-slate-9"]),
+.deliva-scroll-viewport [class*="text-white"]:not([class*="bg-[#00873E]"]):not([class*="bg-emerald-6"]):not([class*="bg-emerald-7"]):not([class*="bg-rose-6"]):not([class*="bg-rose-7"]):not([class*="bg-black"]):not(.deliva-avatar):not([class*="bg-gray-9"]):not([class*="bg-slate-9"]) {
+  color: #111827 !important;
+}
+
+/* Ensure buttons and badges with solid green or dark background KEEP their crisp white text */
+.deliva-scroll-viewport [class*="bg-[#00873E]"],
+.deliva-scroll-viewport [class*="bg-[#00873E]"] *,
+.deliva-scroll-viewport .bg-\[\#00873E\],
+.deliva-scroll-viewport .bg-\[\#00873E\] *,
+.deliva-scroll-viewport [class*="bg-emerald-600"],
+.deliva-scroll-viewport [class*="bg-emerald-600"] *,
+.deliva-scroll-viewport [class*="bg-emerald-700"],
+.deliva-scroll-viewport [class*="bg-emerald-700"] *,
+.deliva-scroll-viewport [class*="bg-rose-600"],
+.deliva-scroll-viewport [class*="bg-rose-600"] *,
+.deliva-scroll-viewport [class*="bg-rose-700"],
+.deliva-scroll-viewport [class*="bg-rose-700"] *,
+.deliva-scroll-viewport .deliva-avatar {
+  color: #FFFFFF !important;
+}
+
+/* ======================================================== */
+/* SKELETON SHIMMER ANIMATION                              */
+/* ======================================================== */
+@keyframes qh-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.qh-skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.qh-skeleton-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: qh-shimmer 1.8s infinite ease-in-out;
+  content: '';
+  pointer-events: none;
+}
+
+.qh-skeleton-shimmer-dark {
+  position: relative;
+  overflow: hidden;
+  background-color: #001e2b;
+}
+
+.qh-skeleton-shimmer-dark::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: qh-shimmer 1.8s infinite ease-in-out;
+  content: '';
+  pointer-events: none;
+}
+
+@keyframes delivaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+

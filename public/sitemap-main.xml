@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage / Academic Directorate -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Physical Education & Sports Science Research Blog -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/blog</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Scholar Registration / Enrollment -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/signup</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Scholar Academic Portal Authentication -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/login</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

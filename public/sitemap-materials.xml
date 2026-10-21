@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Primary Study Materials Library -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Motor Learning and Sports Psychology -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=motor-learning-sports-psychology</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Administrative Theory and Practice in Human Kinetics and Sports -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=administrative-theory-human-kinetics</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Track and Field Athletics -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=track-and-field-athletics</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Table Tennis Curriculum & Mechanics -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=table-tennis</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Resources For Basketball Instruction -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=basketball-resources</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Study Materials on Cricket -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=cricket-study-materials</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Body Mass Index (BMI) and Health-Related Physical Fitness -->
+  <url>
+    <loc>https://quick-hedgeconsulting.com/dashboard/materials?subject=bmi-and-health-related-fitness</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+</urlset>

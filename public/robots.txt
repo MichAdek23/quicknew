@@ -1,0 +1,36 @@
+# QuickHedge Inc. — Premier Physical Education, Human Kinetics & Sports Science Platform
+# Official Canonical Domain: https://quick-hedgeconsulting.com
+
+User-agent: *
+Allow: /
+Allow: /blog
+Allow: /blog/*
+Allow: /dashboard/materials
+Allow: /dashboard/materials/*
+Allow: /fonts/*
+Allow: /images/*
+Allow: /favicon*
+Allow: /apple-touch-icon.png
+Allow: /og-image.jpg
+
+# Protected and Dynamic Administrative Endpoints
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /dashboard/exams/*
+Disallow: /dashboard/scores
+Disallow: /dashboard/billing
+Disallow: /dashboard/profile
+Disallow: /verify-otp
+Disallow: /confirm-otp
+Disallow: /reset-password
+Disallow: /forgot-password
+
+# Host Directive
+Host: https://quick-hedgeconsulting.com
+
+# XML Sitemap Index and Master Sitemaps
+Sitemap: https://quick-hedgeconsulting.com/sitemap-index.xml
+Sitemap: https://quick-hedgeconsulting.com/sitemap.xml
+Sitemap: https://quick-hedgeconsulting.com/sitemap-main.xml
+Sitemap: https://quick-hedgeconsulting.com/sitemap-materials.xml
+Sitemap: https://quick-hedgeconsulting.com/sitemap-blog.xml

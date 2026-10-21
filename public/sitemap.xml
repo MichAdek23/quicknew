@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Master Sitemap Index for QuickHedge Inc. (https://quick-hedgeconsulting.com) -->
+  <sitemap>
+    <loc>https://quick-hedgeconsulting.com/sitemap-main.xml</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://quick-hedgeconsulting.com/sitemap-materials.xml</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://quick-hedgeconsulting.com/sitemap-blog.xml</loc>
+    <lastmod>2026-10-21T09:00:00+01:00</lastmod>
+  </sitemap>
+</sitemapindex>
