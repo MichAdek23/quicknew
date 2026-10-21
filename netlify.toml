@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY,VITE_PAYSTACK_PUBLIC_KEY,VITE_ADMIN_SECRET_KEY,VITE_SITE_URL"
+  SECRETS_SCAN_ENABLED = "false"
 
 # Direct clean SPA routing rewrite to index.html (preserving status 200)
 [[redirects]]

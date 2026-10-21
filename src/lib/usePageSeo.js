@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const CANONICAL_DOMAIN = 'https://quick-hedgeconsulting.com';
+const CANONICAL_DOMAIN = import.meta.env.VITE_SITE_URL || 'https://quick-hedgeconsulting.com';
 
 export function usePageSeo({
   title,
