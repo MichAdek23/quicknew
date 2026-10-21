@@ -4,6 +4,7 @@ import { Eye, EyeOff, ArrowRight, AlertCircle, CheckCircle2, Check, X, Loader2 }
 import QuickHedgeLogo from '../components/QuickHedgeLogo';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
+import { usePageSeo } from '../lib/usePageSeo';
 
 function GoogleIcon({ size = 18 }) {
   return (
@@ -32,6 +33,14 @@ function GoogleIcon({ size = 18 }) {
 export default function SignupPage() {
   const [, setLocation] = useLocation();
   const { signUp, user, loading: authLoading, isAdmin } = useAuth();
+
+  usePageSeo({
+    title: 'Create your account',
+    description: 'Create a QuickHedge account to access physical education and sports science learning resources.',
+    canonicalPath: '/signup',
+    ogImage: '/images/og-signup.png',
+    ogImageAlt: 'QuickHedge account signup page',
+  });
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');

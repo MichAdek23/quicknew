@@ -7,6 +7,8 @@ export function usePageSeo({
   description,
   canonicalPath = '',
   ogType = 'website',
+  ogImage,
+  ogImageAlt = 'QuickHedge Inc.',
 }) {
   useEffect(() => {
     const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
@@ -61,5 +63,33 @@ export function usePageSeo({
     let ogTypeTag = document.querySelector('meta[property="og:type"]');
     if (ogTypeTag) ogTypeTag.setAttribute('content', ogType);
 
-  }, [title, description, canonicalPath, ogType]);
+    // 6. OpenGraph & Twitter Images
+    if (ogImage) {
+      const imageUrl = new URL(ogImage, CANONICAL_DOMAIN).href;
+      let ogImageTag = document.querySelector('meta[property="og:image"]');
+      if (!ogImageTag) {
+        ogImageTag = document.createElement('meta');
+        ogImageTag.setAttribute('property', 'og:image');
+        document.head.appendChild(ogImageTag);
+      }
+      ogImageTag.setAttribute('content', imageUrl);
+
+      let ogImageAltTag = document.querySelector('meta[property="og:image:alt"]');
+      if (!ogImageAltTag) {
+        ogImageAltTag = document.createElement('meta');
+        ogImageAltTag.setAttribute('property', 'og:image:alt');
+        document.head.appendChild(ogImageAltTag);
+      }
+      ogImageAltTag.setAttribute('content', ogImageAlt);
+
+      let twitterImageTag = document.querySelector('meta[name="twitter:image"]');
+      if (!twitterImageTag) {
+        twitterImageTag = document.createElement('meta');
+        twitterImageTag.setAttribute('name', 'twitter:image');
+        document.head.appendChild(twitterImageTag);
+      }
+      twitterImageTag.setAttribute('content', imageUrl);
+    }
+
+  }, [title, description, canonicalPath, ogType, ogImage, ogImageAlt]);
 }

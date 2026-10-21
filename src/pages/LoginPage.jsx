@@ -4,6 +4,7 @@ import { Eye, EyeOff, ArrowRight, AlertCircle, CheckCircle2, Loader2 } from 'luc
 import QuickHedgeLogo from '../components/QuickHedgeLogo';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
+import { usePageSeo } from '../lib/usePageSeo';
 
 function GoogleIcon({ size = 18 }) {
   return (
@@ -32,6 +33,14 @@ function GoogleIcon({ size = 18 }) {
 export default function LoginPage() {
   const [, setLocation] = useLocation();
   const { signIn, user, loading: authLoading, isAdmin } = useAuth();
+
+  usePageSeo({
+    title: 'Log in to your account',
+    description: 'Log in to your QuickHedge account to continue learning with physical education and sports science resources.',
+    canonicalPath: '/login',
+    ogImage: '/images/og-login.png',
+    ogImageAlt: 'QuickHedge account login page',
+  });
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

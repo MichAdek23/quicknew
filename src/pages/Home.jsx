@@ -12,6 +12,8 @@ export default function Home() {
     title: 'QuickHedge Inc. — Physical Education, Human Kinetics & Sports Science Platform',
     description: 'QuickHedge Inc. is Nigeria’s premier academic platform for Physical Education, Human Kinetics, and Sports Science. Access curriculum study materials, motor learning research, and sports psychology diagnostics.',
     canonicalPath: '/',
+    ogImage: '/images/og-home.png',
+    ogImageAlt: 'QuickHedge homepage — Advance Mastery in Sports Science',
   });
 
   useEffect(() => {
